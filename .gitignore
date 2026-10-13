@@ -1,0 +1,10 @@
+# FixIt — never commit keys, receipts, or build secrets
+node_modules/
+mobile/dist/
+mobile/secrets/
+*.jks
+*.keystore
+*.p8
+*.p12
+.env
+backend/.env

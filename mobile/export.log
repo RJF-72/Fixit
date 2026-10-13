@@ -1,0 +1,18 @@
+npm notice run fixit-mobile@1.0.0 npx
+npm notice run expo export --platform web --output-dir dist
+Starting Metro Bundler
+Static rendering is enabled. Learn more: https://docs.expo.dev/router/reference/static-rendering/
+Error: Unable to resolve module expo-router/node/render.js from C:\Fixit\mobile/.: expo-router/node/render.js could not be found within the project or in these directories:
+  node_modules
+Error: Unable to resolve module expo-router/node/render.js from C:\Fixit\mobile/.: expo-router/node/render.js could not be found within the project or in these directories:
+  node_modules
+    at ModuleResolver.resolveDependency (C:\Fixit\mobile\node_modules\metro\src\node-haste\DependencyGraph\ModuleResolution.js:139:15)
+    at DependencyGraph.resolveDependency (C:\Fixit\mobile\node_modules\metro\src\node-haste\DependencyGraph.js:232:43)
+    at C:\Fixit\mobile\node_modules\metro\src\lib\transformHelpers.js:156:21
+    at Server._resolveRelativePath (C:\Fixit\mobile\node_modules\metro\src\Server.js:1104:12)
+    at MetroBundlerDevServer.resolveRelativePathAsync (C:\Fixit\mobile\node_modules\expo\node_modules\@expo\cli\src\start\server\metro\MetroBundlerDevServer.ts:1208:12)
+    at MetroBundlerDevServer.metroLoadModuleContents (C:\Fixit\mobile\node_modules\expo\node_modules\@expo\cli\src\start\server\metro\MetroBundlerDevServer.ts:430:35)
+    at MetroBundlerDevServer.ssrLoadModuleContents (C:\Fixit\mobile\node_modules\expo\node_modules\@expo\cli\src\start\server\metro\MetroBundlerDevServer.ts:504:48)
+    at MetroBundlerDevServer.ssrLoadModule (C:\Fixit\mobile\node_modules\expo\node_modules\@expo\cli\src\start\server\metro\MetroBundlerDevServer.ts:351:17)
+    at MetroBundlerDevServer.getStaticRenderFunctionAsync (C:\Fixit\mobile\node_modules\expo\node_modules\@expo\cli\src\start\server\metro\MetroBundlerDevServer.ts:226:7)
+    at async Promise.all (index 1)
