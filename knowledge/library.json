@@ -1,7 +1,801 @@
 [
-  { "id": "toilet-running", "title": "Fix a running toilet", "category": "Home/Plumbing", "difficulty": "easy", "minutes": 20, "costMin": 5, "costMax": 20, "keywords": ["toilet","running","flapper","fill valve"], "tools": ["sponge","towel"], "materials": ["flapper or fill valve"], "safety": "Turn off water supply valve first.", "steps": ["Shut off supply.", "Drain tank.", "Inspect/replace flapper.", "Adjust fill valve.", "Test flush."] },
-  { "id": "faucet-leak", "title": "Fix a leaking faucet", "category": "Home/Plumbing", "difficulty": "moderate", "minutes": 30, "costMin": 10, "costMax": 40, "keywords": ["faucet","leak","drip","cartridge"], "tools": ["adjustable wrench","screwdriver"], "materials": ["cartridge or O-ring"], "safety": "Shut off water first.", "steps": ["Shut off water.", "Relieve pressure.", "Remove handle.", "Replace cartridge.", "Test."] },
-  { "id": "wifi-windows", "title": "Windows won\u2019t connect to Wi-Fi", "category": "Technology/Windows", "difficulty": "easy", "minutes": 15, "costMin": 0, "costMax": 0, "keywords": ["wifi","windows","network","router"], "tools": [], "materials": [], "steps": ["Restart router + PC.", "Forget + rejoin network.", "Update driver.", "Run troubleshooter."] },
-  { "id": "p0300", "title": "OBD-II P0300 misfire — what to check", "category": "Automotive/Engine", "difficulty": "advanced", "minutes": 60, "costMin": 0, "costMax": 300, "keywords": ["p0300","misfire","check engine"], "tools": ["OBD-II reader"], "materials": ["spark plugs (if worn)"], "safety": "Do not drive with flashing check-engine light.", "steps": ["Read freeze-frame.", "Check plugs/coils.", "Check vacuum leaks.", "Seek mechanic if unresolved."] },
-  { "id": "lawn-spark", "title": "Replace lawn mower spark plug", "category": "Yard & Garden", "difficulty": "easy", "minutes": 15, "costMin": 5, "costMax": 12, "keywords": ["mower","spark plug"], "tools": ["spark plug socket"], "materials": ["spark plug"], "safety": "Disconnect plug wire, cool engine.", "steps": ["Remove wire.", "Remove plug.", "Gap new plug.", "Install + reconnect."] }
+  {
+    "id": "toilet-running",
+    "title": "Fix a running toilet",
+    "category": "Home/Plumbing",
+    "difficulty": "easy",
+    "minutes": 20,
+    "costMin": 5,
+    "costMax": 20,
+    "keywords": [
+      "toilet",
+      "running",
+      "flapper",
+      "fill valve"
+    ],
+    "tools": [
+      "sponge",
+      "towel"
+    ],
+    "materials": [
+      "flapper or fill valve"
+    ],
+    "safety": "Turn off water supply valve first.",
+    "steps": [
+      "Shut off supply.",
+      "Drain tank.",
+      "Inspect/replace flapper.",
+      "Adjust fill valve.",
+      "Test flush."
+    ]
+  },
+  {
+    "id": "faucet-leak",
+    "title": "Fix a leaking faucet",
+    "category": "Home/Plumbing",
+    "difficulty": "moderate",
+    "minutes": 30,
+    "costMin": 10,
+    "costMax": 40,
+    "keywords": [
+      "faucet",
+      "leak",
+      "drip",
+      "cartridge"
+    ],
+    "tools": [
+      "adjustable wrench",
+      "screwdriver"
+    ],
+    "materials": [
+      "cartridge or O-ring"
+    ],
+    "safety": "Shut off water first.",
+    "steps": [
+      "Shut off water.",
+      "Relieve pressure.",
+      "Remove handle.",
+      "Replace cartridge.",
+      "Test."
+    ]
+  },
+  {
+    "id": "wifi-windows",
+    "title": "Windows won\u2019t connect to Wi-Fi",
+    "category": "Technology/Windows",
+    "difficulty": "easy",
+    "minutes": 15,
+    "costMin": 0,
+    "costMax": 0,
+    "keywords": [
+      "wifi",
+      "windows",
+      "network",
+      "router"
+    ],
+    "tools": [],
+    "materials": [],
+    "steps": [
+      "Restart router + PC.",
+      "Forget + rejoin network.",
+      "Update driver.",
+      "Run troubleshooter."
+    ]
+  },
+  {
+    "id": "p0300",
+    "title": "OBD-II P0300 misfire \u2014 what to check",
+    "category": "Automotive/Engine",
+    "difficulty": "advanced",
+    "minutes": 60,
+    "costMin": 0,
+    "costMax": 300,
+    "keywords": [
+      "p0300",
+      "misfire",
+      "check engine"
+    ],
+    "tools": [
+      "OBD-II reader"
+    ],
+    "materials": [
+      "spark plugs (if worn)"
+    ],
+    "safety": "Do not drive with flashing check-engine light.",
+    "steps": [
+      "Read freeze-frame.",
+      "Check plugs/coils.",
+      "Check vacuum leaks.",
+      "Seek mechanic if unresolved."
+    ]
+  },
+  {
+    "id": "lawn-spark",
+    "title": "Replace lawn mower spark plug",
+    "category": "Yard & Garden",
+    "difficulty": "easy",
+    "minutes": 15,
+    "costMin": 5,
+    "costMax": 12,
+    "keywords": [
+      "mower",
+      "spark plug"
+    ],
+    "tools": [
+      "spark plug socket"
+    ],
+    "materials": [
+      "spark plug"
+    ],
+    "safety": "Disconnect plug wire, cool engine.",
+    "steps": [
+      "Remove wire.",
+      "Remove plug.",
+      "Gap new plug.",
+      "Install + reconnect."
+    ]
+  },
+  {
+    "id": "garbage-disposal-jam",
+    "title": "Unjam a garbage disposal",
+    "category": "Home/Plumbing",
+    "difficulty": "easy",
+    "minutes": 15,
+    "costMin": 0,
+    "costMax": 15,
+    "keywords": [
+      "disposal",
+      "jam",
+      "humming",
+      "stuck",
+      "allen wrench"
+    ],
+    "tools": [
+      "allen wrench (hex key)",
+      "tongs or pliers",
+      "flashlight"
+    ],
+    "materials": [],
+    "safety": "Turn the disposal switch OFF and unplug it (or flip the breaker). Never put your hand inside.",
+    "steps": [
+      "Cut power at the switch and breaker.",
+      "Find the hex socket on the disposal bottom and work an allen wrench back and forth to free the jam.",
+      "Use tongs (never fingers) to pull out the lodged object.",
+      "Press the red reset button on the disposal bottom.",
+      "Restore power and run cold water while testing."
+    ]
+  },
+  {
+    "id": "door-sticking",
+    "title": "Fix a sticking interior door",
+    "category": "Home/Doors",
+    "difficulty": "easy",
+    "minutes": 30,
+    "costMin": 0,
+    "costMax": 10,
+    "keywords": [
+      "door",
+      "sticking",
+      "rubbing",
+      "humidity",
+      "plane"
+    ],
+    "tools": [
+      "screwdriver",
+      "sandpaper or hand plane",
+      "pencil"
+    ],
+    "materials": [
+      "wood sealer or paint"
+    ],
+    "safety": "None \u2014 hand tools only.",
+    "steps": [
+      "Mark the rub spots with pencil while opening/closing.",
+      "Tighten all hinge screws; long screws in the top hinge fix most sag.",
+      "Sand or plane only the marked spots, a little at a time.",
+      "Seal bare wood so humidity doesn't swell it again."
+    ]
+  },
+  {
+    "id": "drywall-hole",
+    "title": "Patch a small drywall hole",
+    "category": "Home/Walls",
+    "difficulty": "easy",
+    "minutes": 45,
+    "costMin": 8,
+    "costMax": 20,
+    "keywords": [
+      "drywall",
+      "hole",
+      "patch",
+      "spackle",
+      "wall repair"
+    ],
+    "tools": [
+      "putty knife",
+      "sandpaper",
+      "utility knife"
+    ],
+    "materials": [
+      "self-adhesive mesh patch",
+      "joint compound",
+      "touch-up paint"
+    ],
+    "safety": "Check for wires/pipes behind the wall before cutting.",
+    "steps": [
+      "Trim loose edges and stick the mesh patch over the hole.",
+      "Spread joint compound thin with a putty knife, feathering edges.",
+      "Let dry, sand smooth, apply a second thin coat if needed.",
+      "Prime and paint to match."
+    ]
+  },
+  {
+    "id": "caulk-bathtub",
+    "title": "Re-caulk a bathtub",
+    "category": "Home/Plumbing",
+    "difficulty": "easy",
+    "minutes": 60,
+    "costMin": 8,
+    "costMax": 18,
+    "keywords": [
+      "caulk",
+      "bathtub",
+      "mold",
+      "sealant",
+      "bathroom"
+    ],
+    "tools": [
+      "utility knife",
+      "caulk gun",
+      "painter's tape"
+    ],
+    "materials": [
+      "100% silicone caulk",
+      "rubbing alcohol",
+      "rags"
+    ],
+    "safety": "Ventilate the bathroom; silicone fumes irritate eyes.",
+    "steps": [
+      "Cut out all old caulk and clean with rubbing alcohol.",
+      "Tape both sides of the joint for a clean line.",
+      "Apply a steady bead of silicone, then smooth with a wet finger.",
+      "Pull tape immediately; let cure 24 hours before showering."
+    ]
+  },
+  {
+    "id": "outlet-replace",
+    "title": "Replace a standard wall outlet",
+    "category": "Home/Electrical",
+    "difficulty": "moderate",
+    "minutes": 30,
+    "costMin": 5,
+    "costMax": 15,
+    "keywords": [
+      "outlet",
+      "receptacle",
+      "replace",
+      "no power",
+      "wiring"
+    ],
+    "tools": [
+      "non-contact voltage tester",
+      "screwdrivers",
+      "wire strippers"
+    ],
+    "materials": [
+      "15A duplex receptacle",
+      "wire nuts"
+    ],
+    "safety": "Turn OFF the breaker and VERIFY dead with a voltage tester before touching anything. If wiring looks aluminum or scorched, stop and call an electrician.",
+    "steps": [
+      "Kill the breaker; test the outlet dead with the voltage tester.",
+      "Remove cover and outlet; note which wires go where (photo helps).",
+      "Connect black to brass, white to silver, ground to green.",
+      "Mount, restore power, and test with a lamp or tester."
+    ]
+  },
+  {
+    "id": "smoke-detector-chirp",
+    "title": "Stop a chirping smoke detector",
+    "category": "Home/Appliances",
+    "difficulty": "easy",
+    "minutes": 10,
+    "costMin": 5,
+    "costMax": 30,
+    "keywords": [
+      "smoke detector",
+      "chirp",
+      "beeping",
+      "battery",
+      "alarm"
+    ],
+    "tools": [
+      "step stool"
+    ],
+    "materials": [
+      "9V or AA lithium batteries"
+    ],
+    "safety": "Never disable a detector \u2014 replace batteries or the unit.",
+    "steps": [
+      "Press the hush/test button to identify the chirping unit.",
+      "Replace the battery (or batteries) with fresh lithium.",
+      "If it still chirps, the unit is expired \u2014 replace it (10-year life).",
+      "Test monthly going forward."
+    ]
+  },
+  {
+    "id": "jump-start",
+    "title": "Jump-start a dead battery",
+    "category": "Automotive/Battery",
+    "difficulty": "easy",
+    "minutes": 15,
+    "costMin": 0,
+    "costMax": 0,
+    "keywords": [
+      "dead battery",
+      "jump start",
+      "jumper cables",
+      "car won't start"
+    ],
+    "tools": [
+      "jumper cables or jump pack"
+    ],
+    "materials": [],
+    "safety": "No smoking near the battery; keep cables clear of moving parts. If the battery is cracked or leaking, don't jump it \u2014 replace it.",
+    "steps": [
+      "Park the donor car close; both engines OFF.",
+      "Red clamp to dead battery positive (+), red to donor positive.",
+      "Black to donor negative (-), black to unpainted metal on the dead car.",
+      "Start donor, wait 2 minutes, start the dead car.",
+      "Remove cables in reverse order; drive 20+ minutes to recharge."
+    ]
+  },
+  {
+    "id": "tire-pressure",
+    "title": "Fix a TPMS low-pressure warning",
+    "category": "Automotive/Tires",
+    "difficulty": "easy",
+    "minutes": 10,
+    "costMin": 0,
+    "costMax": 5,
+    "keywords": [
+      "TPMS",
+      "tire pressure",
+      "low tire",
+      "warning light"
+    ],
+    "tools": [
+      "tire pressure gauge",
+      "air compressor"
+    ],
+    "materials": [],
+    "safety": "Check pressure cold; don't drive on a visibly flat tire.",
+    "steps": [
+      "Find the correct PSI on the driver's door jamb sticker.",
+      "Check each tire cold with a gauge.",
+      "Inflate to spec (including the spare if it has a sensor).",
+      "Drive a few miles \u2014 the light should reset; if not, a sensor may be bad."
+    ]
+  },
+  {
+    "id": "brake-squeal",
+    "title": "Diagnose squealing brakes",
+    "category": "Automotive/Brakes",
+    "difficulty": "moderate",
+    "minutes": 45,
+    "costMin": 30,
+    "costMax": 150,
+    "keywords": [
+      "brakes",
+      "squeal",
+      "squeaking",
+      "pads",
+      "rotors"
+    ],
+    "tools": [
+      "jack and jack stands",
+      "lug wrench",
+      "brake cleaner"
+    ],
+    "materials": [
+      "brake pads (axle set)"
+    ],
+    "safety": "Use jack stands \u2014 never work under a car on a jack alone. If braking feels weak or the pedal sinks, tow it to a shop.",
+    "steps": [
+      "With the wheel off, check pad thickness (under 3mm = replace).",
+      "Look for a wear indicator tab touching the rotor.",
+      "Clean dust with brake cleaner; check the rotor for deep grooves.",
+      "Replace pads as an axle set if worn; bed them per the box instructions."
+    ]
+  },
+  {
+    "id": "engine-overheat",
+    "title": "What to do when the engine overheats",
+    "category": "Automotive/Engine",
+    "difficulty": "moderate",
+    "minutes": 30,
+    "costMin": 15,
+    "costMax": 60,
+    "keywords": [
+      "overheating",
+      "temperature gauge",
+      "coolant",
+      "steam",
+      "radiator"
+    ],
+    "tools": [
+      "coolant",
+      "rag"
+    ],
+    "materials": [
+      "50/50 coolant"
+    ],
+    "safety": "NEVER open a hot radiator cap \u2014 scalding steam. Pull over and shut off immediately if steam appears.",
+    "steps": [
+      "Pull over safely and shut the engine off; turn the heater to max while coasting.",
+      "Wait at least 30 minutes for it to cool.",
+      "Check the coolant reservoir (not the radiator cap) and top up if low.",
+      "Look for leaks/hoses; if it overheats again quickly, tow it \u2014 don't drive."
+    ]
+  },
+  {
+    "id": "headlight-bulb",
+    "title": "Replace a headlight bulb",
+    "category": "Automotive/Maintenance",
+    "difficulty": "easy",
+    "minutes": 20,
+    "costMin": 15,
+    "costMax": 40,
+    "keywords": [
+      "headlight",
+      "bulb",
+      "burned out",
+      "replace",
+      "lamp"
+    ],
+    "tools": [
+      "screwdriver",
+      "gloves"
+    ],
+    "materials": [
+      "correct bulb type (check manual)"
+    ],
+    "safety": "Don't touch a halogen bulb's glass with bare fingers \u2014 oil shortens its life.",
+    "steps": [
+      "Open the hood and find the bulb socket behind the headlight.",
+      "Unplug the connector and twist the socket out.",
+      "Wearing gloves, insert the new bulb without touching the glass.",
+      "Reconnect, test, and aim-check against a wall at night."
+    ]
+  },
+  {
+    "id": "iphone-storage",
+    "title": "Free up a full iPhone",
+    "category": "Technology/iPhone",
+    "difficulty": "easy",
+    "minutes": 20,
+    "costMin": 0,
+    "costMax": 0,
+    "keywords": [
+      "iphone",
+      "storage full",
+      "no space",
+      "photos",
+      "apps"
+    ],
+    "tools": [],
+    "materials": [],
+    "safety": "Back up photos before deleting anything.",
+    "steps": [
+      "Settings > General > iPhone Storage \u2014 see what's biggest.",
+      "Offload unused apps (keeps data) and delete what you don't need.",
+      "Enable iCloud Photos 'Optimize Storage' or move videos to a computer.",
+      "Clear Safari cache: Settings > Safari > Clear History and Data."
+    ]
+  },
+  {
+    "id": "printer-offline",
+    "title": "Fix a printer stuck offline",
+    "category": "Technology/Printers",
+    "difficulty": "easy",
+    "minutes": 15,
+    "costMin": 0,
+    "costMax": 0,
+    "keywords": [
+      "printer",
+      "offline",
+      "won't print",
+      "wifi printer"
+    ],
+    "tools": [],
+    "materials": [],
+    "safety": "None.",
+    "steps": [
+      "Restart the printer and your router.",
+      "On the computer, remove the printer and re-add it.",
+      "Make sure the printer and computer are on the same Wi-Fi network.",
+      "Reinstall the manufacturer's driver if it still shows offline."
+    ]
+  },
+  {
+    "id": "router-slow",
+    "title": "Fix slow Wi-Fi",
+    "category": "Technology/Wi-Fi",
+    "difficulty": "easy",
+    "minutes": 15,
+    "costMin": 0,
+    "costMax": 0,
+    "keywords": [
+      "wifi",
+      "slow",
+      "internet",
+      "router",
+      "speed"
+    ],
+    "tools": [],
+    "materials": [],
+    "safety": "None.",
+    "steps": [
+      "Unplug the modem and router for 60 seconds, then plug the modem back first.",
+      "Move the router central and elevated, away from microwaves.",
+      "Switch congested devices to 5GHz in your Wi-Fi settings.",
+      "If speeds stay low at the modem, call your ISP."
+    ]
+  },
+  {
+    "id": "windows-slow-boot",
+    "title": "Speed up a slow Windows PC",
+    "category": "Technology/Windows",
+    "difficulty": "easy",
+    "minutes": 25,
+    "costMin": 0,
+    "costMax": 0,
+    "keywords": [
+      "windows",
+      "slow",
+      "boot",
+      "startup",
+      "performance"
+    ],
+    "tools": [],
+    "materials": [],
+    "safety": "Don't disable security software at startup.",
+    "steps": [
+      "Task Manager > Startup apps \u2014 disable what you don't need at boot.",
+      "Settings > Storage \u2014 run Disk Cleanup / Storage Sense.",
+      "Check for Windows updates and install them.",
+      "Uninstall programs you no longer use."
+    ]
+  },
+  {
+    "id": "mower-no-start",
+    "title": "Fix a mower that won't start",
+    "category": "Yard & Garden/Equipment",
+    "difficulty": "easy",
+    "minutes": 25,
+    "costMin": 5,
+    "costMax": 25,
+    "keywords": [
+      "lawn mower",
+      "won't start",
+      "pull cord",
+      "small engine"
+    ],
+    "tools": [
+      "spark plug wrench",
+      "fresh fuel"
+    ],
+    "materials": [
+      "spark plug",
+      "fresh gasoline"
+    ],
+    "safety": "Disconnect the spark plug wire before working; no smoking near fuel.",
+    "steps": [
+      "Check fuel \u2014 drain old gas (over 30 days) and refill fresh.",
+      "Check oil level; top up with the right weight.",
+      "Pull and inspect the spark plug \u2014 clean or replace if fouled.",
+      "Reconnect, prime per the manual, and pull firmly."
+    ]
+  },
+  {
+    "id": "sprinkler-head",
+    "title": "Replace a broken sprinkler head",
+    "category": "Yard & Garden/Irrigation",
+    "difficulty": "easy",
+    "minutes": 20,
+    "costMin": 8,
+    "costMax": 20,
+    "keywords": [
+      "sprinkler",
+      "broken head",
+      "irrigation",
+      "pop-up"
+    ],
+    "tools": [
+      "small shovel",
+      "towel"
+    ],
+    "materials": [
+      "matching pop-up sprinkler head"
+    ],
+    "safety": "Turn the zone off at the controller first.",
+    "steps": [
+      "Turn the irrigation zone OFF.",
+      "Dig around the head and unscrew it from the riser.",
+      "Screw on the matching new head to the same height.",
+      "Turn the zone on and adjust the spray pattern."
+    ]
+  },
+  {
+    "id": "aphids-roses",
+    "title": "Get rid of aphids on roses",
+    "category": "Yard & Garden/Pests",
+    "difficulty": "easy",
+    "minutes": 15,
+    "costMin": 0,
+    "costMax": 12,
+    "keywords": [
+      "aphids",
+      "roses",
+      "pests",
+      "insects",
+      "garden"
+    ],
+    "tools": [
+      "garden hose",
+      "spray bottle"
+    ],
+    "materials": [
+      "insecticidal soap or neem oil"
+    ],
+    "safety": "Spray in the evening to protect pollinators; follow label directions.",
+    "steps": [
+      "Blast colonies off with a strong hose spray.",
+      "Spray insecticidal soap directly on remaining aphids.",
+      "Repeat in 5\u20137 days; encourage ladybugs as natural predators.",
+      "Avoid broad insecticides that kill beneficial insects."
+    ]
+  },
+  {
+    "id": "oven-no-heat",
+    "title": "Diagnose an oven that won't heat",
+    "category": "Kitchen/Appliances",
+    "difficulty": "moderate",
+    "minutes": 30,
+    "costMin": 20,
+    "costMax": 80,
+    "keywords": [
+      "oven",
+      "won't heat",
+      "bake element",
+      "not working"
+    ],
+    "tools": [
+      "screwdriver",
+      "multimeter (optional)"
+    ],
+    "materials": [
+      "replacement bake element"
+    ],
+    "safety": "Turn OFF the breaker before removing any panels. Gas oven? If you smell gas, leave and call the gas company.",
+    "steps": [
+      "(Electric) Kill the breaker; inspect the bake element for blisters or breaks.",
+      "Unplug the range, remove the element's mounting screws, and swap in the matching part.",
+      "Restore power and test at 350\u00b0F.",
+      "If the new element doesn't heat, the thermostat or control board is suspect \u2014 call a pro."
+    ]
+  },
+  {
+    "id": "fridge-icemaker",
+    "title": "Fix an ice maker that stopped",
+    "category": "Kitchen/Appliances",
+    "difficulty": "easy",
+    "minutes": 20,
+    "costMin": 0,
+    "costMax": 30,
+    "keywords": [
+      "ice maker",
+      "fridge",
+      "no ice",
+      "freezer"
+    ],
+    "tools": [],
+    "materials": [
+      "replacement water filter (if due)"
+    ],
+    "safety": "Unplug before removing panels.",
+    "steps": [
+      "Confirm the ice maker arm/switch is ON and the freezer is at 0\u00b0F.",
+      "Check the water supply valve behind the fridge is open.",
+      "Replace the water filter if it's past due \u2014 clogs starve the maker.",
+      "Wait 24 hours; if still nothing, the inlet valve may need a pro."
+    ]
+  },
+  {
+    "id": "microwave-sparks",
+    "title": "Stop a sparking microwave",
+    "category": "Kitchen/Appliances",
+    "difficulty": "easy",
+    "minutes": 10,
+    "costMin": 10,
+    "costMax": 25,
+    "keywords": [
+      "microwave",
+      "sparking",
+      "arcing",
+      "sparks inside"
+    ],
+    "tools": [],
+    "materials": [
+      "microwave-safe waveguide cover"
+    ],
+    "safety": "Stop using it immediately when arcing. Never run a microwave empty.",
+    "steps": [
+      "Unplug and inspect for metal (foil, twist ties, chipped-rack coating).",
+      "Clean food splatter off the walls and waveguide cover.",
+      "Replace a burned waveguide cover with a microwave-safe one.",
+      "If arcing continues with nothing inside, the magnetron is failing \u2014 replace the unit."
+    ]
+  },
+  {
+    "id": "stripped-screw",
+    "title": "Remove a stripped screw",
+    "category": "Workshop/Tools",
+    "difficulty": "easy",
+    "minutes": 15,
+    "costMin": 0,
+    "costMax": 12,
+    "keywords": [
+      "stripped screw",
+      "stuck screw",
+      "remove",
+      "extractor"
+    ],
+    "tools": [
+      "screwdriver set",
+      "rubber band",
+      "drill (last resort)"
+    ],
+    "materials": [
+      "screw extractor set (optional)"
+    ],
+    "safety": "Wear eye protection when drilling.",
+    "steps": [
+      "Try a larger bit or a wide rubber band between bit and screw.",
+      "Tap the driver firmly into the head while turning.",
+      "Use a screw extractor: drill a pilot hole, then back the screw out.",
+      "Replace with a new screw \u2014 don't reuse the stripped one."
+    ]
+  },
+  {
+    "id": "picture-hang",
+    "title": "Hang a heavy picture level and secure",
+    "category": "Workshop/Measuring",
+    "difficulty": "easy",
+    "minutes": 20,
+    "costMin": 5,
+    "costMax": 20,
+    "keywords": [
+      "hang picture",
+      "level",
+      "drywall anchor",
+      "frame"
+    ],
+    "tools": [
+      "level",
+      "tape measure",
+      "drill"
+    ],
+    "materials": [
+      "wall anchors rated for the weight",
+      "picture hooks"
+    ],
+    "safety": "Use anchors rated above the frame's weight; find studs for heavy pieces.",
+    "steps": [
+      "Weigh the frame; choose anchors rated above it.",
+      "Mark hanger spots with a tape measure and level line.",
+      "Drill, set anchors, and mount the hangers.",
+      "Hang, level, and give it a firm tug test."
+    ]
+  }
 ]

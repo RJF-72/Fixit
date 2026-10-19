@@ -14,19 +14,20 @@ Read this before buying. Everything below is stated plainly so there are no surp
 - No AI keys ship in the app — the backend proxies all AI calls (correct architecture).
 
 ## What is not finished — please read
-1. **The AI diagnosis engine is a labeled stub.** `backend/src/api/diagnose.js` returns a
-   hardcoded example diagnosis. The provider interface (`AIProvider`) is built and the code
-   comments say "stub — connect vision model" / "Never fake analysis". The buyer connects
-   their own vision API key (OpenAI / Anthropic / Google). The pipeline is ready for it;
-   the model call itself is not wired.
-2. **The offline knowledge library is seeded with 5 articles.** The spec calls for a fuller
-   library — the buyer grows it.
+1. **The AI diagnosis needs a vision API key to run live.** The vision provider is now wired
+   (`backend/src/api/vision.js` → OpenAI GPT-4o vision, key from `OPENAI_API_KEY` env var,
+   strict JSON output validated against the Diagnosis schema, safety filter and quota enforced).
+   With no key set, the endpoint honestly returns a labeled demo stub (`stub: true`). The buyer
+   supplies their own key at deploy — no code changes needed.
+2. **The offline knowledge library now holds 28 articles** across Home, Automotive, Technology,
+  Yard & Garden, Kitchen, and Workshop (was 5). The spec calls for a fuller library —
+   the buyer can keep growing it.
 3. **v1.1 / v2 features are spec'd, not built:** video diagnosis, voice-out, Windows version
    (see `FIXIT-SPEC.md` §50).
 4. **Not published to the App Store or Play Store.** The $7.99 lifetime purchase flow
-   (`fixit_lifetime_799`) was never tested against the live stores.
-5. **$0 revenue to date.** Pre-revenue, pre-launch. Priced as structured, documented
-   software with a clear path to launch — not as a finished business.
+   (`fixit_lifetime_799`) was never tested against the live stores. (A Payhip $7.99 buy
+   button exists on the marketing landing page.)
+5. **$0 confirmed app-store revenue to date.** Pre-launch on the stores.
 
 ## Positioning (keep these in the product)
 - FixIt is troubleshooting guidance software, **not a licensed professional** and not
