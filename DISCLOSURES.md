@@ -22,8 +22,9 @@ Read this before buying. Everything below is stated plainly so there are no surp
 2. **The offline knowledge library now holds 28 articles** across Home, Automotive, Technology,
   Yard & Garden, Kitchen, and Workshop (was 5). The spec calls for a fuller library —
    the buyer can keep growing it.
-3. **v1.1 / v2 features are spec'd, not built:** video diagnosis, voice-out, Windows version
-   (see `FIXIT-SPEC.md` §50).
+3. **V2.0 features are spec'd, not built:** video diagnosis, voice-out, Windows version,
+   parts/affiliate, advanced vision, local models (see `FIXIT-SPEC.md` §50). The current
+   release is v1.0.
 4. **Not published to the App Store or Play Store.** The $7.99 lifetime purchase flow
    (`fixit_lifetime_799`) was never tested against the live stores. (A Payhip $7.99 buy
    button exists on the marketing landing page.)
