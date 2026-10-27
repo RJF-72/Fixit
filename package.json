@@ -5,7 +5,7 @@
   "description": "FixIt — See It. Ask It. Fix It. $7.99 lifetime visual troubleshooting",
   "scripts": {
     "bootstrap": "pwsh -File bootstrap-fixit.ps1",
-    "test": "node tests/smoke.test.js",
+    "test": "node tests/smoke.test.js && node tests/economics.test.js && node tests/diagnose.test.js && node tests/billing.test.js && node tests/http.test.js",
     "backend": "node backend/src/index.js",
     "deploy:check": "node deploy/check.js",
     "deploy:version": "node deploy/version.js --bump=patch"

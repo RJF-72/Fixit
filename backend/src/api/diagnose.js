@@ -1,8 +1,18 @@
-// POST /api/diagnose { photoUris, description, category, deviceId, tier } -> structured Diagnosis + safety filter (spec 7/13/14)
+// POST /api/diagnose { photoUris, description, category, deviceId } -> structured Diagnosis + safety filter (spec 7/13/14)
+// photoUris entries must be fetchable by the vision provider: https URLs or
+// data: URLs (the mobile app base64-encodes picked photos — see
+// mobile/src/services/aiProvider.ts). Local device paths are rejected.
+// Photos are processed in memory and forwarded to the provider only; this
+// endpoint never writes them to disk or a database.
 const { safetyBanner } = require("./safety");
 const { checkQuota, consumeQuota, quotaHeaders } = require("./quota");
 const { partsLinks } = require("./parts");
+const { hasEntitlement } = require("./entitlements");
 const vision = require("./vision");
+
+function isProviderFetchable(uri) {
+  return typeof uri === "string" && (uri.startsWith("data:image/") || uri.startsWith("https://") || uri.startsWith("http://"));
+}
 
 function stubDiagnosis(safety, after) {
   // Labeled demo stub: returned ONLY when no vision provider is configured.
@@ -35,12 +45,16 @@ function stubDiagnosis(safety, after) {
 module.exports = async (req, res) => {
   const { description = "", category = "Home", photoUris = [] } = req.body || {};
   if (!description || description.length < 3) return res.status(400).json({ error: "Describe the problem in a few words." });
+  if (!Array.isArray(photoUris)) return res.status(400).json({ error: "photoUris must be an array." });
   if (photoUris.length > 6) return res.status(413).json({ error: "Max 6 photos." });
+  if (!photoUris.every(isProviderFetchable)) {
+    return res.status(400).json({ error: "Photos must be sent as data: URLs or https URLs — local device paths cannot be analyzed." });
+  }
   const safety = safetyBanner(category, description);
-  // Tier MUST come from server-side purchase verification in production
-  // (see ./verify); the client value is accepted only until verify is wired.
+  // Tier comes ONLY from server-side purchase verification (./verify records
+  // it in ./entitlements). Any client-sent tier is ignored.
   const deviceId = req.body.deviceId || req.headers["x-device-id"] || "anonymous";
-  const tier = req.body.tier === "full" ? "full" : "preview";
+  const tier = hasEntitlement(deviceId) ? "full" : "preview";
   const q = checkQuota(deviceId, tier);
   quotaHeaders(res, q);
   if (!q.allowed) {

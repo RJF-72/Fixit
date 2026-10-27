@@ -2,10 +2,21 @@
 // AI vision/reasoning costs real money per call, so AI analyses are metered;
 // everything local (library, search, calculators, saved projects) is unlimited.
 // Tiers: preview (free, pre-purchase) vs full (verified lifetime unlock).
-// Production: derive tier server-side from /api/purchases/verify, and persist
-// counters in the DB. This in-memory version is correct logic for one instance.
+// Production: tier is derived server-side from /api/purchases/verify (see
+// ./entitlements, consumed by ./diagnose), and counters should persist in
+// the DB. This in-memory version is correct logic for one instance.
+// The monthly caps ARE the AI cost cap: set them in the server environment
+// (FIXIT_PREVIEW_MONTHLY_LIMIT / FIXIT_FULL_MONTHLY_LIMIT) — the defaults
+// below apply until the owner picks different numbers.
 const MONTH = 30 * 24 * 3600 * 1000;
-const LIMITS = { preview: 3, full: 100 };
+function envLimit(name, fallback) {
+  const n = parseInt(process.env[name] || "", 10);
+  return Number.isFinite(n) && n >= 0 ? n : fallback;
+}
+const LIMITS = {
+  preview: envLimit("FIXIT_PREVIEW_MONTHLY_LIMIT", 3),
+  full: envLimit("FIXIT_FULL_MONTHLY_LIMIT", 100),
+};
 const store = new Map(); // key -> { count, resetAt }
 function monthKey(id, tier, now = Date.now()) {
   return tier + ":" + String(id || "anonymous") + ":" + Math.floor(now / MONTH);

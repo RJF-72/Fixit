@@ -4,9 +4,11 @@
 // uses Node's native fetch.
 //
 // Env:
-//   FIXIT_AI_PROVIDER  "openai" (default) | "none"
+//   FIXIT_AI_PROVIDER  "openai" (default) | "none" — AI_PROVIDER is accepted
+//                      as an alias ("stub"/"none" = no provider, matching
+//                      render.yaml / backend/.env.example).
 //   OPENAI_API_KEY     required when provider is "openai"
-//   FIXIT_AI_MODEL     default "gpt-4o"
+//   FIXIT_AI_MODEL     default "gpt-4o" (OPENAI_MODEL accepted as an alias)
 //
 // Contract: diagnoseWithVision({ photoUris, description, category }) resolves
 // to a Diagnosis matching shared/types.ts, or throws (never returns fake data).
@@ -29,7 +31,14 @@ Rules you MUST follow:
 - If the photos/description are insufficient, set confidence "low", keep causes to the most likely, and say so in "test".`;
 
 function providerName() {
-  return (process.env.FIXIT_AI_PROVIDER || "openai").toLowerCase();
+  const raw = (process.env.FIXIT_AI_PROVIDER || process.env.AI_PROVIDER || "openai").toLowerCase();
+  if (raw === "stub" || raw === "none") return "none";
+  if (raw === "openai" || raw === "openai-compatible") return "openai";
+  return raw;
+}
+
+function modelName() {
+  return process.env.FIXIT_AI_MODEL || process.env.OPENAI_MODEL || "gpt-4o";
 }
 
 function isConfigured() {
@@ -48,7 +57,7 @@ async function diagnoseWithVision({ photoUris = [], description, category }) {
 async function diagnoseOpenAI({ photoUris, description, category }) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error("OPENAI_API_KEY is not set.");
-  const model = process.env.FIXIT_AI_MODEL || "gpt-4o";
+  const model = modelName();
 
   const content = [
     { type: "text", text: `Category: ${category}\nUser description: ${description}\nDiagnose the problem from the photos and description.` },
@@ -129,4 +138,4 @@ function sanitize(d) {
   };
 }
 
-module.exports = { diagnoseWithVision, isConfigured, providerName };
+module.exports = { diagnoseWithVision, isConfigured, providerName, modelName };
